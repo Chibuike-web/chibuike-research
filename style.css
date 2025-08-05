@@ -11,9 +11,59 @@
 	--font-tertiary: "Roboto Mono";
 
 	/* Color */
-	--color-bg: hsl(223, 8% 8%);
+	--color-bg: hsl(0, 0%, 100%);
+	--color-text-primary: hsl(223, 8%, 8%);
+	--color-text-secondary: hsla(223, 8%, 8%, 0.5);
+	--color-button-text: hsl(223, 8%, 8%);
+	--color-button-bg: hsla(223, 8%, 8%, 0.1);
+	--color-outline: hsla(223, 8%, 8%, 0.25);
+	--color-bg-card: hsl(0, 0%, 100%);
+	--color-outline-card: hsla(223, 8%, 8%, 0.1);
+	--color-bg-card-inner: hsla(223, 8%, 8%, 0.02);
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-bg: hsl(223, 8%, 8%);
+		--color-text-primary: hsl(0, 0%, 100%);
+		--color-text-secondary: hsla(0, 0%, 100%, 0.5);
+		--color-button-text: hsl(0, 0%, 100%);
+		--color-button-bg: hsla(0, 0%, 100%, 0.1);
+		--color-outline: hsla(0, 0%, 100%, 0.25);
+		--color-bg-card: hsla(0, 0%, 100%, 0.02);
+		--color-outline-card: hsla(0, 0%, 100%, 0.06);
+		--color-bg-card-inner: hsl(223, 8%, 8%);
+	}
+}
+
+:root.light,
+.light {
+	--color-bg: hsl(0, 0%, 100%);
+	--color-text-primary: hsl(223, 8%, 8%);
+	--color-text-secondary: hsla(223, 8%, 8%, 0.5);
+	--color-button-text: hsl(223, 8%, 8%);
+	--color-button-bg: hsla(223, 8%, 8%, 0.1);
+	--color-outline: hsla(223, 8%, 8%, 0.25);
+	--color-bg-card: hsl(0, 0%, 100%);
+	--color-outline-card: hsla(223, 8%, 8%, 0.1);
+	--color-bg-card-inner: hsla(223, 8%, 8%, 0.02);
+}
+
+:root.dark,
+.dark {
+	--color-bg: hsl(223, 8%, 8%);
+	--color-text-primary: hsl(0, 0%, 100%);
+	--color-text-secondary: hsla(0, 0%, 100%, 0.5);
+	--color-button-text: hsl(0, 0%, 100%);
+	--color-button-bg: hsla(0, 0%, 100%, 0.1);
+	--color-outline: hsla(0, 0%, 100%, 0.25);
+	--color-bg-card: hsla(0, 0%, 100%, 0.02);
+	--color-outline-card: hsla(0, 0%, 100%, 0.06);
+	--color-bg-card-inner: hsl(223, 8%, 8%);
 }
 
 body {
 	font-family: var(--font-primary);
+	background-color: var(--color-bg);
+	color: var(--color-text-primary);
 }
