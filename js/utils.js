@@ -27,3 +27,39 @@ export const articles = [
 		year: 2025,
 	},
 ];
+
+/**
+ * @typedef {Object} PersonalProject
+ * @property {string} id
+ * @property {string} title
+ * @property {string} name
+ * @property {number} year
+ */
+
+/**@type {PersonalProject[]} */
+export const personalProjects = [
+	{
+		id: crypto.randomUUID(),
+		title: "NOMBA",
+		name: "Bulk Airtime",
+		year: 2025,
+	},
+	{
+		id: crypto.randomUUID(),
+		title: "NOMBA",
+		name: "Bulk Airtime",
+		year: 2025,
+	},
+	{
+		id: crypto.randomUUID(),
+		title: "NOMBA",
+		name: "Bulk Airtime",
+		year: 2025,
+	},
+	{
+		id: crypto.randomUUID(),
+		title: "NOMBA",
+		name: "Bulk Airtime",
+		year: 2025,
+	},
+];

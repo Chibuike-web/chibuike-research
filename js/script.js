@@ -1,9 +1,10 @@
-import { articles } from "./utils.js";
+import { articles, personalProjects } from "./utils.js";
 import { arrowIcon } from "./icons.js";
 
 const themeToggle = document.getElementById("theme-toggle");
 const linkElements = document.querySelectorAll(".btn-content a");
 const articlesSection = document.querySelector(".articles");
+const personalProjectSection = document.querySelector(".personal-projects");
 
 themeToggle?.addEventListener("click", toggleTheme);
 
@@ -46,7 +47,10 @@ linkElements.forEach((link) => {
 const articleList = document.createElement("ul");
 articleList.className = "article-list";
 
-articles.forEach((article) => {
+articlesSection?.appendChild(articleList);
+
+/**@param {import("./utils.js").Article} article  */
+function createArticle(article) {
 	const listItem = document.createElement("a");
 	listItem.href = "https://www.linkedin.com/in/chibuike-maduabuchi";
 	listItem.className = "article-item";
@@ -63,6 +67,42 @@ articles.forEach((article) => {
 
 	listItem.appendChild(meta);
 	articleList.appendChild(listItem);
-});
+}
 
-articlesSection?.appendChild(articleList);
+articles.forEach(createArticle);
+
+const projectList = document.createElement("div");
+projectList.className = "project-list";
+
+personalProjectSection?.appendChild(projectList);
+
+/** @param {import("./utils.js").PersonalProject} project */
+function createProjectCard(project) {
+	const card = document.createElement("div");
+	card.className = "project-card";
+	card.id = `project-${project.id}`;
+
+	const title = document.createElement("div");
+	title.className = "project-title";
+	title.textContent = project.title;
+	card.appendChild(title);
+
+	const meta = document.createElement("div");
+	meta.className = "project-meta";
+
+	const name = document.createElement("span");
+	name.className = "project-name";
+	name.textContent = project.name;
+
+	const year = document.createElement("span");
+	year.className = "project-year";
+	year.textContent = `${project.year}`;
+
+	meta.appendChild(name);
+	meta.appendChild(year);
+	card.appendChild(meta);
+
+	projectList?.appendChild(card);
+}
+
+personalProjects.forEach(createProjectCard);

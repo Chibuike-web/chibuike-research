@@ -10,11 +10,12 @@
 	--color-text-secondary: hsla(223, 8%, 8%, 0.5);
 	--color-button-text: hsl(223, 8%, 8%);
 	--color-button-bg: hsla(223, 8%, 8%, 0.1);
-	--color-button-bg-hover: hsla(223, 8%, 8%, 0.1);
+	--color-button-bg-hover: hsla(223, 8%, 8%, 0.2);
 	--color-outline: hsla(223, 8%, 8%, 0.25);
 	--color-bg-card: hsl(0, 0%, 100%);
 	--color-outline-card: hsla(223, 8%, 8%, 0.1);
 	--color-bg-card-inner: hsla(223, 8%, 8%, 0.02);
+	--color-bg-card-hover: hsla(223, 8%, 8%, 0.03);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -24,11 +25,12 @@
 		--color-text-secondary: hsla(0, 0%, 100%, 0.5);
 		--color-button-text: hsl(0, 0%, 100%);
 		--color-button-bg: hsla(0, 0%, 100%, 0.1);
-		--color-button-bg-hover: hsla(0, 0%, 100%, 0.1);
+		--color-button-bg-hover: hsla(0, 0%, 100%, 0.2);
 		--color-outline: hsla(0, 0%, 100%, 0.25);
 		--color-bg-card: hsla(0, 0%, 100%, 0.02);
 		--color-outline-card: hsla(0, 0%, 100%, 0.06);
 		--color-bg-card-inner: hsl(223, 8%, 8%);
+		--color-bg-card-hover: hsla(0, 0%, 100%, 0.03);
 	}
 }
 
@@ -39,11 +41,12 @@
 	--color-text-secondary: hsla(223, 8%, 8%, 0.5);
 	--color-button-text: hsl(223, 8%, 8%);
 	--color-button-bg: hsla(223, 8%, 8%, 0.1);
-	--color-button-bg-hover: hsla(223, 8%, 8%, 0.1);
+	--color-button-bg-hover: hsla(223, 8%, 8%, 0.2);
 	--color-outline: hsla(223, 8%, 8%, 0.25);
 	--color-bg-card: hsl(0, 0%, 100%);
 	--color-outline-card: hsla(223, 8%, 8%, 0.1);
 	--color-bg-card-inner: hsla(223, 8%, 8%, 0.02);
+	--color-bg-card-hover: hsla(223, 8%, 8%, 0.03);
 }
 
 :root.dark,
@@ -53,11 +56,12 @@
 	--color-text-secondary: hsla(0, 0%, 100%, 0.5);
 	--color-button-text: hsl(0, 0%, 100%);
 	--color-button-bg: hsla(0, 0%, 100%, 0.1);
-	--color-button-bg-hover: hsla(0, 0%, 100%, 0.1);
+	--color-button-bg-hover: hsla(0, 0%, 100%, 0.2);
 	--color-outline: hsla(0, 0%, 100%, 0.25);
 	--color-bg-card: hsla(0, 0%, 100%, 0.02);
 	--color-outline-card: hsla(0, 0%, 100%, 0.06);
 	--color-bg-card-inner: hsl(223, 8%, 8%);
+	--color-bg-card-hover: hsla(0, 0%, 100%, 0.03);
 }
 
 *::before,
@@ -211,7 +215,7 @@ h1 {
 	transition: background 0.2s ease, color 0.2s ease;
 
 	&:hover {
-		background-color: var(--color-button-bg-hover);
+		background-color: var(--color-bg-card-hover);
 
 		@media (max-width: 35rem) {
 			background-color: transparent;
@@ -232,4 +236,64 @@ h1 {
 .articles > .article-list > .article-item > .article-meta {
 	color: var(--color-text-secondary);
 	font-weight: 500;
+	font-family: var(--font-tertiary);
+}
+
+.personal-projects {
+	margin-top: 6rem;
+}
+
+.personal-projects .project-list {
+	margin-top: 2rem;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+	gap: 1.5rem;
+}
+
+.personal-projects .project-list .project-card {
+	background-color: var(--color-bg-card);
+	border: 1px solid var(--color-outline-card);
+	border-radius: 18px;
+	padding-inline: 8px;
+	padding-block: 8px 16px;
+
+	&:hover {
+		background-color: var(--color-bg-card-hover);
+
+		@media (max-width: 35rem) {
+			background-color: var(--color-bg-card);
+		}
+	}
+}
+
+.personal-projects .project-list .project-card .project-title {
+	background: var(--color-bg-card-inner);
+	border-radius: 10px;
+	border: 1px solid var(--color-outline-card);
+	font-family: var(--font-tertiary);
+	font-weight: 500;
+	height: 160px;
+	display: flex;
+	font-size: 2rem;
+	align-items: center;
+	justify-content: center;
+}
+
+.personal-projects .project-list .project-card .project-meta {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	padding-inline: 4px;
+	padding-top: 12px;
+}
+
+.personal-projects .project-list .project-card .project-meta .project-name {
+	font-size: 18px;
+	font-weight: 600;
+}
+
+.personal-projects .project-list .project-card .project-meta .project-year {
+	font-weight: 500;
+	font-size: 18px;
+	color: var(--color-text-secondary);
 }
