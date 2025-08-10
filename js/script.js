@@ -78,9 +78,12 @@ personalProjectSection?.appendChild(projectList);
 
 /** @param {import("./utils.js").PersonalProject} project */
 function createProjectCard(project) {
-	const card = document.createElement("div");
+	const card = document.createElement("a");
 	card.className = "project-card";
 	card.id = `project-${project.id}`;
+	card.href = project.link;
+	card.target = "_blank";
+	card.rel = "noopener noreferrer";
 
 	const title = document.createElement("div");
 	title.className = "project-title";
